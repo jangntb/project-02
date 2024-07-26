@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/reponsive.css">
     <title>Document</title>
   </head>
   <body>
@@ -21,22 +22,22 @@
                 <!-- logo -->
                 <img src="./assets/logo/bensnik.svg" alt="Bensnik." class="logo">
                 <!-- nav -->
-                <nav class="nav">
-                    <ul>
+                <nav class="nav" id="navbar__list--pc">
+                    <ul class="navbar__item">
                         <li>
-                            <a href="#!">Home</a>
+                            <a class="navbar__link" href="#!">Home</a>
                         </li>
                         <li>
-                            <a href="#!">Features</a>
+                            <a class="navbar__link" href="#!">Features</a>
                         </li>
                         <li>
-                            <a href="#!">Pricing</a>
+                            <a class="navbar__link" href="#!">Pricing</a>
                         </li>
                         <li>
-                            <a href="#!">About</a>
+                            <a class="navbar__link" href="#!">About</a>
                         </li>
                         <li>
-                            <a href="#!">Contact</a>
+                            <a class="navbar__link" href="#!">Contact</a>
                         </li>
                     </ul>
                 </nav>
@@ -47,6 +48,49 @@
                  
         </div>
     </header>
+    <!-- tablet/mobile header -->
+     <div class="mobile-header">
+        <!-- menu-checkbox -->
+         <input type="checkbox" name="menu-checkbox" id="menu-checkbox" hidden>
+        <!-- logo menu -->
+        <label for="menu-checkbox">
+            <svg class="menu__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+        </label>
+        <!-- overlay -->
+         <label for="menu-checkbox" class="menu-overlay">
+        </label>
+        <!-- menu drawer -->
+         <div class="menu-drawer">
+            <div class="menu-drawer__top">
+                <!-- logo -->
+                <img src="./assets/logo/bensnik.svg" alt="Bensnik." class="logo">
+                <!-- close menu -->
+                <label for="menu-checkbox">
+                    <svg class="close-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path fill="currentColor" d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/>
+                    </svg>
+                </label>
+            </div>
+             <ul id="navbar__list--mobile"></ul>
+            <!-- sử dụng java script để copy navbar -->
+            <script>
+            const navPC = document.querySelector("#navbar__list--pc");
+            const navMobile = document.querySelector("#navbar__list--mobile");
+            // sao chép
+            navMobile.innerHTML = navPC.innerHTML;
+          </script>
+          <div class="separate"></div>
+          <div class="mobile-action">
+            <li>
+                <a class="navbar__link" href="#!">Sing In</a>
+            </li>
+            <li>
+                <a class="navbar__link" href="#!">Sign Up</a>
+            </li>
+          </div>
+         </div>
+     </div>
     <!-- main -->
      <main>
         <!-- hero -->
@@ -269,7 +313,7 @@
             <div class="body">
                 <div class="row-top">
                     <!-- column 1 -->
-                    <div class="column">
+                    <div class="column footer-hidden-tablet">
                         <a href="#!"><img src="./assets/img/logo.svg" alt=""></a>
                     </div>
                     <!-- column 2 -->
